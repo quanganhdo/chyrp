@@ -31,6 +31,7 @@ $twig_filters = array(
     'urlencode' =>        'twig_urlencode_filter',
     'quotes' =>           'twig_quotes_filter',
     'slashes' =>          'addslashes',
+    'md5' => 	          'md5',
 
     // string filters
     'title' =>            'twig_title_string_filter',
