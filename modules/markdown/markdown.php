@@ -7,6 +7,9 @@
             $this->addAlias("preview", "markdownify", 8);
         }
         static function markdownify($text) {
+			if (strpos($text, '<nomarkdown />') !== FALSE) {
+				return $text;
+			}
             return Markdown($text);
         }
     }
