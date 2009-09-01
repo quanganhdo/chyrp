@@ -1,6 +1,14 @@
 .DS_Store
 .htaccess
-feathers/photo/lib/cache/*
-uploads/*
+feathers/photo/lib/cache/* 
+uploads/*                   
 includes/config.yaml.php
-includes/database.yaml.php
+includes/database.yaml.php  
+
+# quanganhdo.com specific
+themes/manifest/*
+feathers/gist/*
+modules/gists/*
+modules/slimbox2/*
+modules/wpautop/*
+admin/ft2.php
