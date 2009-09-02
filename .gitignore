@@ -11,4 +11,4 @@ feathers/gist/*
 modules/gists/*
 modules/slimbox2/*
 modules/wpautop/*
-admin/ft2.php
+modules/upload/*
