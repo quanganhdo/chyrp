@@ -38,7 +38,7 @@
             $author = __("Guest");
 ?>
     <entry>
-        <title type="html"><?php echo fix(oneof($title, ucfirst($post->feather))); ?></title>
+        <title type="html"><?php echo $post->feather == 'text' ? '☃ ' : '' ?><?php echo fix(oneof($title, ucfirst($post->feather))); ?></title>
         <id>tag:<?php echo $tagged; ?></id>
         <updated><?php echo when("c", $updated); ?></updated>
         <published><?php echo when("c", $post->created_at); ?></published>
