@@ -54,9 +54,7 @@
         </author>
         <content type="html">
 			<?php echo fix($post->feed_content()); ?>
-			<?php if ($post->feather == 'link'): ?>
-				<?php echo " <a href='{$original_url}'>☃</a>" ?>
-			<?php endif ?>
+			<?php echo fix("<br /><a href='{$original_url}'> ☃ </a>") ?>
 		</content>
 <?php $trigger->call("feed_item", $post); ?>
     </entry>
