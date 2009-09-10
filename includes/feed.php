@@ -26,7 +26,8 @@
                                "\\1,".when("Y-m-d", $updated).":",
                                $tagged,
                                1);
-
+        
+		$original_url = $post->url();
         $url = $post->url();
         $title = $post->title();
 
@@ -38,7 +39,9 @@
             $author = __("Guest");
 ?>
     <entry>
-        <title type="html"><?php echo $post->feather == 'text' ? '☃ ' : '' ?><?php echo fix(oneof($title, ucfirst($post->feather))); ?></title>
+        <title type="html">
+			<?php echo $post->feather == 'text' ? '☃ ' : '' ?><?php echo fix(oneof($title, ucfirst($post->feather))); ?>
+		</title>
         <id>tag:<?php echo $tagged; ?></id>
         <updated><?php echo when("c", $updated); ?></updated>
         <published><?php echo when("c", $post->created_at); ?></published>
@@ -49,7 +52,12 @@
             <uri><?php echo fix($post->user->website); ?></uri>
 <?php endif; ?>
         </author>
-        <content type="html"><?php echo fix($post->feed_content()); ?></content>
+        <content type="html">
+			<?php echo fix($post->feed_content()); ?>
+			<?php if ($post->feather == 'link'): ?>
+				<?php echo " <a href='{$original_url}'>☃</a>" ?>
+			<?php endif ?>
+		</content>
 <?php $trigger->call("feed_item", $post); ?>
     </entry>
 <?php
